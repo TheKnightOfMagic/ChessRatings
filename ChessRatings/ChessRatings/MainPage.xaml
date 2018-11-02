@@ -6,9 +6,28 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Chess Elo Ratings Calculator" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="Player1Ratings" Text="Insert Player 1 Ratings"/>
+
+        <Entry x:Name="Player2Ratings" Text="Insert Player 2 Ratings"/>
+
+        <Label Text="Who won?"/>
+        <Button x:Name="Player1Won" Text="Player One" IsEnabled="false" Clicked="Won"/>
+        <Button x:Name="Player2Won" Text="Player Two" IsEnabled="false" Clicked="Won"/>
+
+        <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate"/>
+
+        <Label Text="Ratings "/>
+
+        <Label x:Name ="player1NewRatings" Text="Player 1: "/>
+        <Label x:Name ="player2NewRatings" Text="Player 2: "/>
+
+
+
+
     </StackLayout>
 
 </ContentPage>
