@@ -13,5 +13,19 @@ namespace ChessRatings
         {
             InitializeComponent();
         }
+
+        private void Player2Won_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Player1Won_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void onCalculate(object sender, EventArgs e)
+        {
+
+        }
     }
 }

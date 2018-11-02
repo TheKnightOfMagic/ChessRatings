@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChessRatings
 {
-    class Class1
+    class ChessRatingCalculations
     {
     }
 }
