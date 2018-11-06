@@ -15,10 +15,10 @@
         <Entry x:Name="Player2Ratings" Text="Insert Player 2 Ratings"/>
 
         <Label Text="Who won?"/>
-        <Button x:Name="Player1Won" Text="Player One" IsEnabled="false" Clicked="Player1Won_Clicked"/>
-        <Button x:Name="Player2Won" Text="Player Two" IsEnabled="false" Clicked="Player2Won_Clicked"/>
+        <Button x:Name="Player1Won" Text="Player One" IsEnabled="true" Clicked="Player1Won_Clicked"/>
+        <Button x:Name="Player2Won" Text="Player Two" IsEnabled="true" Clicked="Player2Won_Clicked"/>
 
-        <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate"/>
+        <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate" IsEnabled="true"/>
 
         <Label Text="Ratings "/>
 
