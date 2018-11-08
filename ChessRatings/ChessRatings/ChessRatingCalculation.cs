@@ -13,9 +13,9 @@ namespace ChessRatings
             int playerOne = 0;
             int playerTwo = 0;
             int spread = 0;
-            int higherBoard = 1;
-            //Check if it's proper input format
-           
+            int higherBoard = 0;
+
+            //Check if it's proper input form and converts to int
             try
             {
                 playerOne = Convert.ToInt32(player1);
@@ -24,11 +24,14 @@ namespace ChessRatings
             }
             catch (Exception)
             {
-                return "Invalid Values";
+                //If format is improper
+                return "Invalid Value";
             }
             
-
+            //Calculates the difference between ratings of player1 and ratings of player2
             spread = Math.Abs(playerOne - playerTwo);
+
+            //Checks which player has a higher rating
             if (playerOne > playerTwo)
             {
                 higherBoard = 1;
@@ -38,18 +41,30 @@ namespace ChessRatings
                 higherBoard = 2;
             }
 
-            if(who == 1)
+
+            //Checks who is currently being calculated
+            //Adds gains and losses to the original rating
+            if (who == 1)
             {
-                return "" + (playerOne + findGains(playerOne, spread, playerWin, who, higherBoard));
+                return "" + (playerOne + findGains(spread, playerWin, who, higherBoard));
             }
-            else{
-                return "" + (playerTwo + findGains(playerTwo, spread, playerWin, who, higherBoard));
+            else if(who ==2 ){
+                return "" + (playerTwo + findGains(spread, playerWin, who, higherBoard));
+            }
+            else
+            {
+                //Something went wrong
+                return "HmmMMMM";
             }
         }
-        static int findGains(int ratings, int spread, int playerWon, int current, int higherBoard)
+
+        //Calculates the gains and losses of the player that's being calculated
+        static int findGains(int spread, int playerWon, int currentPlayer, int higherBoard)
         {
             int gains = 0;
             int modifier = 0;
+
+            //Uses spread to find modifier that will modify the gains
             if (spread <= 12)
                 modifier = 0;
             else if (spread <= 37)
@@ -82,33 +97,39 @@ namespace ChessRatings
                 modifier = 14;
 
 
-            if(playerWon == 0 && higherBoard == current)
+            //multiples by -1 if current player is losing points
+            if (playerWon == 0 && higherBoard == currentPlayer)
             {
                 gains = -1 * modifier;
-            }else if(playerWon == 0 && higherBoard != current)
+            }else if(playerWon == 0 && higherBoard != currentPlayer)
             {
                 gains = modifier;
             }
-            if (higherBoard == current && current == playerWon)
+            else if (higherBoard == currentPlayer && currentPlayer == playerWon)
             {
                 gains = 16 - modifier;
             }
-            else if (higherBoard == current && current != playerWon)
+            else if (higherBoard == currentPlayer && currentPlayer != playerWon)
             {
                 gains = -1 * (16 + modifier);
-            }else if(higherBoard !=current && current == playerWon)
+            }
+            else if(higherBoard !=currentPlayer && currentPlayer == playerWon)
             {
                 gains = 16 + modifier;
-            }else if(higherBoard != current && current == playerWon)
+            }
+            else if(higherBoard != currentPlayer && currentPlayer != playerWon)
             {
                 gains = -1 * (16 - modifier);
             }
             else
             {
+                //Just in case
                 gains = 0;
             }
 
-                return gains;
+
+            
+            return gains;
 
         }
        

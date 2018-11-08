@@ -9,15 +9,15 @@
         <Label Text="Chess Elo Ratings Calculator" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-
-        <Entry x:Name="Player1Ratings" Text="Insert Player 1 Ratings"/>
-
-        <Entry x:Name="Player2Ratings" Text="Insert Player 2 Ratings"/>
+        <Label Text="Player 1 Ratings:"/>
+        <Entry x:Name="Player1Ratings" Text=""/>
+        <Label Text="Player 2 Ratings:"/>
+        <Entry x:Name="Player2Ratings" Text=""/>
 
         <Label Text="Who won?"/>
         <Button x:Name="Player1Won" Text="Player One" IsEnabled="true" Clicked="Player1Won_Clicked"/>
         <Button x:Name="Player2Won" Text="Player Two" IsEnabled="true" Clicked="Player2Won_Clicked"/>
-
+        <Button x:Name="Tied" Text="Tied" IsEnabled="true" Clicked="Tied_Clicked"/>
         <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate" IsEnabled="true"/>
 
         <Label Text="Ratings "/>
