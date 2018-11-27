@@ -4,31 +4,35 @@
              xmlns:local="clr-namespace:ChessRatings"
              x:Class="ChessRatings.MainPage">
 
-    <StackLayout>
+    <StackLayout Padding="10,20,10,0">
         <!-- Place new controls here -->
         <Label Text="Chess Elo Ratings Calculator" 
-           HorizontalOptions="Center"
+           HorizontalOptions="CenterAndExpand"
            FontSize="Large"
            FontAttributes="Bold"
             />
-        <Label Text="Player 1 Ratings:"/>
-        <Entry x:Name="Player1Ratings" Text=""/>
-        <Label Text="Player 2 Ratings:"/>
-        <Entry x:Name="Player2Ratings" Text=""/>
+        <Label Text="Player 1 Ratings:"  HorizontalOptions="CenterAndExpand"  FontSize="Medium"/>
+        <Entry x:Name="Player1Ratings" Text="" />
+        <Label Text="Player 2 Ratings:"  HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+        <Entry x:Name="Player2Ratings" Text="" />
 
-        <Label Text="Who won?"/>
-        <Button x:Name="Player1Won" Text="Player One" IsEnabled="true" Clicked="Player1Won_Clicked"
-                WidthRequest="100"/>
-        <Button x:Name="Player2Won" Text="Player Two" IsEnabled="true" Clicked="Player2Won_Clicked"
-                WidthRequest ="100"/>
-        <Button x:Name="Tied" Text="Tied" IsEnabled="true" Clicked="Tied_Clicked"
-                WidthRequest="100"/>
-        <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate" IsEnabled="true"/>
+        <Label Text="Who won?" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
 
-        <Label Text="Ratings "/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="5,4,5,4">
+            <Button x:Name="Player1Won" Text="Player One" IsEnabled="true" Clicked="Player1Won_Clicked"
+                   Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="Player2Won" Text="Player Two" IsEnabled="true" Clicked="Player2Won_Clicked"
+                  Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="Tied" Text="Tied" IsEnabled="true" Clicked="Tied_Clicked"
+                  Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+        
+        <Button x:Name="Calculate" Text="Calculate" Clicked="OnCalculate" IsEnabled="true" Margin="0, 25,0,10" WidthRequest="500"/>
 
-        <Label x:Name ="player1NewRatings" Text="Player 1: "/>
-        <Label x:Name ="player2NewRatings" Text="Player 2: "/>
+        <Label Text="Ratings "  HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+        <Label x:Name ="player1NewRatings" Text="Player 1:            "  HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+        <Label x:Name ="player2NewRatings" Text="Player 2:            "  HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
 
 
 
