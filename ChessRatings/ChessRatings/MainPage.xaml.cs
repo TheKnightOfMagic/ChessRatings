@@ -18,19 +18,39 @@ namespace ChessRatings
         int playerWon = 0;
         string player1Calculated = "";
         string player2Calculated = "";
+        Color selected = Color.LightBlue;
+        Color unselected = Color.LightGray;
         public MainPage()
         {
             InitializeComponent();
+            ColorizeButtons(-1);
+        }
+
+        public void ColorizeButtons (int which)
+        {
+            Player1Won.BackgroundColor = which == 1 ? selected :unselected;
+            Player2Won.BackgroundColor = which == 2 ? selected : unselected;
+            PlayerTied.BackgroundColor = which == 0 ? selected : unselected;
         }
 
         private void Player2Won_Clicked(object sender, EventArgs e)
         {
             playerWon = 2;
+            ColorizeButtons(playerWon);
         }
 
         private void Player1Won_Clicked(object sender, EventArgs e)
         {
             playerWon = 1;
+            ColorizeButtons(playerWon);
+
+        }
+
+        private void PlayerTied_Clicked(object sender, EventArgs e)
+        {
+            playerWon = 0;
+            ColorizeButtons(playerWon);
+
         }
         //Calculates and outputs the new ratings for both players
         private void OnCalculate(object sender, EventArgs e)
@@ -44,10 +64,6 @@ namespace ChessRatings
 
         }
 
-        //If button is pressed - playerWon is tied (0)
-        private void Tied_Clicked(object sender, EventArgs e)
-        {
-            playerWon = 0;
-        }
+      
     }
 }

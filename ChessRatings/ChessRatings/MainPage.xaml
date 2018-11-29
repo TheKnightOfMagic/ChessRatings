@@ -23,7 +23,7 @@
                    Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
             <Button x:Name="Player2Won" Text="Player Two" IsEnabled="true" Clicked="Player2Won_Clicked"
                   Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
-            <Button x:Name="Tied" Text="Tied" IsEnabled="true" Clicked="Tied_Clicked"
+            <Button x:Name="PlayerTied" Text="Tied" IsEnabled="true" Clicked="PlayerTied_Clicked"
                   Margin="0, 0, 10, 0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
         
